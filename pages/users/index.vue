@@ -1,5 +1,8 @@
 <template>
+  <div>
     <h1>the users view</h1>
+    <nuxt-link to="/">Users</nuxt-link>
+  </div>
 </template>
 
 <script lang="ts">
