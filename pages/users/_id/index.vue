@@ -6,6 +6,7 @@
 </template>
 
 <script lang="ts">
+  /*
   import {Vue, Component} from "vue-property-decorator";
   import {VueRoute} from "~/interfaces";
 
@@ -15,7 +16,28 @@
     private goHome():void {
       this.$router.push('/');
     }
+
+    validate(ob:any):boolean {
+      console.log("sss",ob);
+      return false;
+    }
+  }*/
+  import {Route} from 'vue-router';
+  import {isInteger} from "~/functions/util";
+
+  export default {
+    name:'UserId',
+    validate({route}: {route: Route }): Promise<boolean> | boolean {
+      return isInteger(route.params.id);
+    },
+    methods:{
+      goHome():void {
+        //@ts-ignore //TODO why the class not implementing validate Function
+        this.$router.push('/');
+      }
+    }
   }
+
 </script>
 
 <style lang="">

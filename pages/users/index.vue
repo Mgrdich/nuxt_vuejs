@@ -1,20 +1,5 @@
 <template>
-  <div>
-    <h1>the users view</h1>
-    <nuxt-link to="/">Home</nuxt-link>
-  </div>
+  <p>
+    Elements itself
+  </p>
 </template>
-
-<script lang="ts">
-  import {Vue, Component} from 'vue-property-decorator';
-
-  @Component
-  export default class Users extends Vue {
-
-  }
-
-</script>
-
-<style scoped lang="scss">
-
-</style>
