@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>the users view</h1>
-    <nuxt-link to="/">Users</nuxt-link>
+    <nuxt-link to="/">Home</nuxt-link>
   </div>
 </template>
 

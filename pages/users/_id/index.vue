@@ -1,5 +1,8 @@
 <template>
-  <h1> single user , with ID: {{$route.params.id}}</h1>
+  <div>
+    <h1> single user , with ID: {{$route.params.id}}</h1>
+    <button @click="goHome">Go Home</button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,7 +12,9 @@
   @Component
   export default class UserId extends Vue implements VueRoute {
 
-
+    private goHome():void {
+      this.$router.push('/');
+    }
   }
 </script>
 
