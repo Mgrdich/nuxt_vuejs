@@ -12,6 +12,7 @@
 
 <script lang="ts">
   import {Vue, Component} from 'nuxt-property-decorator';
+  import {Context} from "@nuxt/types";
 
   @Component
   export default class Users extends Vue {
@@ -19,6 +20,11 @@
 
     private btnClick() {
       this.$router.push(`/users/${this.id}`);
+    }
+
+    layout(context:Context) {
+      console.log(context);
+      return 'users';
     }
   }
 
