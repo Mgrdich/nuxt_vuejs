@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-  import {Vue, Component,Prop} from 'nuxt-property-decorator';
+  import {Vue, Component} from 'nuxt-property-decorator';
   import PostPreview from "@/components/Posts/PostPreview.vue";
 
   @Component({
