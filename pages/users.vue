@@ -2,7 +2,7 @@
   <div>
     <h1>the users view</h1>
     <nuxt-link to="/">Home</nuxt-link>
-    <input type="text" v-model="id">
+    <input type="text" v-model="id"/>
     <button @click="btnClick">
       Click me
     </button>
@@ -23,7 +23,6 @@
     }
 
     layout(context:Context) {
-      console.log(context);
       return 'users';
     }
   }
