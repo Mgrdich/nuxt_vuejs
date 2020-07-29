@@ -17,15 +17,18 @@
 </div>
 </template>
 
-<script>
-import SideNavToggle from "@/components/Navigation/SideNavToggle";
+<script lang="ts">
+  import {Component, Prop, Vue} from "nuxt-property-decorator";
+  import SideNavToggle from "~/components/Navigation/SideNavToggle.vue";
 
-export default {
-  name: "TheHeader",
-  components: {
-    SideNavToggle
+  @Component({
+    components:{
+      SideNavToggle
+    }
+  })
+  export default class SideNav extends Vue {
+    @Prop({default:false}) show!:boolean;
   }
-};
 </script>
 
 

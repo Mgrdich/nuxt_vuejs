@@ -20,18 +20,14 @@
 </div>
 </template>
 
-<script>
-export default {
-  name: "SideNav",
-  props: {
-    show: {
-      type: Boolean,
-      default: false
-    }
-  }
-};
-</script>
+<script lang="ts">
+  import {Component, Prop, Vue} from "nuxt-property-decorator";
 
+  @Component({})
+  export default class SideNav extends Vue {
+    @Prop({default:false}) show!:boolean;
+  }
+</script>
 
 <style scoped>
 .sidenav-container {

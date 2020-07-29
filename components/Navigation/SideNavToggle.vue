@@ -9,6 +9,13 @@
   </div>
 </template>
 
+<script lang="ts">
+  import {Component, Vue} from "nuxt-property-decorator";
+
+  @Component
+  export default class SideNavToggle extends Vue {}
+</script>
+
 <style scoped>
 .drawer-toggle {
   display: flex;
