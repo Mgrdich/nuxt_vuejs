@@ -8,7 +8,7 @@
 
 <script lang="ts">
   import {Component, Vue} from "nuxt-property-decorator";
-  import Header from "~/components/Navigation/Header";
+  import Header from "~/components/Navigation/Header.vue";
 
   @Component({
     components: {
