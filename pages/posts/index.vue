@@ -1,7 +1,7 @@
 <template>
   <div class="posts-page">
     <section class="featured-posts">
-      <PostList :is-admin="true"/>
+      <PostList :is-admin="false"/>
     </section>
   </div>
 </template>
@@ -15,10 +15,7 @@
       PostList
     }
   })
-  export default class Posts extends Vue {
-
-
-  }
+  export default class Posts extends Vue {}
 </script>
 
 <style>
