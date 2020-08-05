@@ -1,7 +1,7 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <button @click="$router.push('/admin/new-post')">Create Post</button>
+      <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
@@ -13,16 +13,15 @@
 <script lang="ts">
   import {Vue, Component} from "nuxt-property-decorator";
   import PostList from "~/components/Posts/PostList.vue";
+  import AppButton from "~/components/UI/AppButton.vue";
 
   @Component({
     components:{
-      PostList
+      PostList,
+      AppButton
     }
   })
-  export default class Admin extends Vue {
-
-
-  }
+  export default class Admin extends Vue {}
 </script>
 
 <style>

@@ -21,9 +21,10 @@
     font: inherit;
     background-color: black;
     color: white;
-    padding: 5px;
     cursor: pointer;
     border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
   }
 
   .button:hover,

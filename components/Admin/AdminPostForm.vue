@@ -23,7 +23,7 @@
   import AppButton from "~/components/UI/AppButton.vue";
 
   @Component({
-    component: {
+    components: {
       AppControlInput,
       AppButton
     }

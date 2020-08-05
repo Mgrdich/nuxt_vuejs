@@ -42,6 +42,7 @@
     font: inherit;
     border: 1px solid #ccc;
     padding: 5px;
+    border-radius: 4px;
   }
 
   .input-control input:focus,
