@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/posts/' + id" class="post-preview">
+  <nuxt-link :to="postLink" class="post-preview">
     <article>
       <div class="post-thumbnail" :style="{backgroundImage: 'url('+bgUrl+')'}"></div>
       <div class="post-content">
@@ -18,7 +18,16 @@
     @Prop({required: true}) id!: string;
     @Prop({required: true}) bgUrl!: string;
     @Prop({required: true}) title!: string;
+    @Prop({required:true}) isAdmin!:boolean;
     @Prop() previewText!: string;
+
+    get postLink(): string {
+      let prefix: string = '/posts/';
+      if (this.isAdmin) {
+        prefix = '/admin/';
+      }
+      return prefix + this.id;
+    }
   }
 </script>
 

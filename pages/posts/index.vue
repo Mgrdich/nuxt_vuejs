@@ -1,7 +1,7 @@
 <template>
   <div class="posts-page">
     <section class="featured-posts">
-      <PostList/>
+      <PostList :is-admin="true"/>
     </section>
   </div>
 </template>

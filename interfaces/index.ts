@@ -4,7 +4,7 @@ export interface VueRoute  {
   $route: Route
 }
 
-export interface Post {
+export interface IPost {
   id:string;
   bgUrl:string;
   previewText?:string;
