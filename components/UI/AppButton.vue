@@ -6,15 +6,12 @@
     v-on="$listeners"><slot /></button>
 </template>
 
-<script>
-  export default {
-    name: 'AppButton',
-    props: {
-      btnStyle: {
-        type: String,
-        default: ''
-      }
-    }
+<script lang="ts">
+  import {Component, Vue,Prop} from "nuxt-property-decorator";
+
+  @Component
+  export default class AppButton extends Vue {
+      @Prop({default:''})btnStyle!:string;
   }
 </script>
 

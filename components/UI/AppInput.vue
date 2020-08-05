@@ -14,19 +14,13 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'AppInputControl',
-    props: {
-      controlType: {
-        type: String,
-        default: 'input'
-      },
-      value: {
-        type: String,
-        default: ''
-      }
-    }
+<script lang="ts">
+  import {Component, Vue,Prop} from "nuxt-property-decorator";
+
+  @Component
+  export default class AppInputControl extends Vue {
+      @Prop({default:'input'})controlType!:string;
+      @Prop({default:''})value!:string;
   }
 </script>
 

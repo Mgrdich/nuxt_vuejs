@@ -1,7 +1,7 @@
 <template>
   <div class="admin-new-post-page">
       <div class="new-post-form">
-        
+
       </div>
   </div>
 </template>
