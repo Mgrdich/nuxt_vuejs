@@ -53,3 +53,13 @@ body {
   color: #fff;
   background-color: #35495e;
 }
+
+.forms {
+  margin: 0 20px ;
+}
+@media screen and (min-width: 768px) {
+  .forms {
+    width: 600px;
+    margin: 0 auto;
+  }
+}

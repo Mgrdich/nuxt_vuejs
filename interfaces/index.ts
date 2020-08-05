@@ -9,4 +9,5 @@ export interface IPost {
   bgUrl:string;
   previewText?:string;
   title:string;
+  author:string;
 }

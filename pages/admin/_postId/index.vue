@@ -1,6 +1,6 @@
 <template>
   <div class="admin-new-post-page">
-    <section class="update-form">
+    <section class="update-form forms">
       <AdminPostForm :post="loadedPost"/>
     </section>
   </div>
@@ -19,7 +19,8 @@
       id:'',
       bgUrl:'',
       previewText:'',
-      title:'',
+      title:'Damn you fool',
+      author:'sss'
     }
   }
 </script>
