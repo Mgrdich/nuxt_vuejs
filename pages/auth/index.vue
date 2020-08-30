@@ -1,6 +1,6 @@
 <template>
     <div class="admin-auth-page">
-      <div class="auth-container">
+      <div class="forms">
         <form>
           <AppControlInput v-model="auth.email">Email</AppControlInput>
           <AppControlInput v-model="auth.password">Password</AppControlInput>

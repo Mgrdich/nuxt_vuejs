@@ -1,6 +1,6 @@
 <template>
   <div class="admin-new-post-page">
-      <section class="new-post-form">
+      <section class="form-container forms">
         <AdminPostForm/>
       </section>
   </div>
@@ -22,7 +22,7 @@
 </script>
 
 <style >
-  .new-post-form {
+  .form-container {
     margin: 20px;
   }
 </style>
