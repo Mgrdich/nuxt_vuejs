@@ -12,7 +12,8 @@
   import {IPost} from "~/interfaces";
 
   @Component({
-    components: {AdminPostForm}
+    components: {AdminPostForm},
+    layout:'admin'
   })
   export default class PostID extends Vue {
     private loadedPost:IPost = {

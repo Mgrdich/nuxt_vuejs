@@ -19,7 +19,8 @@
     components:{
       PostList,
       AppButton
-    }
+    },
+    layout:'admin'
   })
   export default class Admin extends Vue {}
 </script>

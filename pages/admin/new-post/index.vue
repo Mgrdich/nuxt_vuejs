@@ -13,16 +13,11 @@
   @Component({
     components:{
       AdminPostForm
-    }
+    },
+    layout:'admin'
   })
   export default class NewPost extends Vue {
 
 
   }
 </script>
-
-<style >
-  .form-container {
-    margin: 20px;
-  }
-</style>

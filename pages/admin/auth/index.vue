@@ -22,7 +22,8 @@
   import AppInput from "~/components/UI/AppInput.vue";
   import AppButton from "~/components/UI/AppButton.vue";
   @Component({
-    components: {AppButton, AppInput}
+    components: {AppButton, AppInput},
+    layout:'admin'
   })
   export default class Auth extends Vue {
     @Prop({default:false})isLogin!:boolean;
