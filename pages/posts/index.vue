@@ -1,7 +1,7 @@
 <template>
   <div class="posts-page">
     <section class="featured-posts">
-      <PostList :is-admin="false"/>
+      <PostList :posts="posts" :is-admin="false"/>
     </section>
   </div>
 </template>
@@ -9,13 +9,17 @@
 <script lang="ts">
   import {Vue, Component} from "nuxt-property-decorator";
   import PostList from "~/components/Posts/PostList.vue";
+  import {IPost} from "~/interfaces";
+  import {POSTS_TEST} from "~/functions/util";
 
   @Component({
     components:{
       PostList
     }
   })
-  export default class Posts extends Vue {}
+  export default class Posts extends Vue {
+    private posts:Array<IPost> = POSTS_TEST;
+  }
 </script>
 
 <style>

@@ -5,7 +5,7 @@
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <PostList :is-admin="true" />
+      <PostList :posts="posts" :is-admin="true" />
     </section>
   </div>
 </template>
@@ -14,6 +14,8 @@
   import {Vue, Component} from "nuxt-property-decorator";
   import PostList from "~/components/Posts/PostList.vue";
   import AppButton from "~/components/UI/AppButton.vue";
+  import {IPost} from "~/interfaces";
+  import {POSTS_TEST} from "~/functions/util";
 
   @Component({
     components:{
@@ -22,7 +24,9 @@
     },
     layout:'admin'
   })
-  export default class Admin extends Vue {}
+  export default class Admin extends Vue {
+    private posts:Array<IPost> = POSTS_TEST;
+  }
 </script>
 
 <style>

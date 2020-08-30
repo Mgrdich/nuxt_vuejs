@@ -1,16 +1,12 @@
 <template>
   <div class="post-list">
     <PostPreview
-      id="1"
-      bg-url="https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
-      preview-text=""
-      title="Test1"
-      :is-admin="isAdmin"
-    />
-    <PostPreview
-      id="2"
-      bg-url="https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
-      title="Test1"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :bg-url="post.bgUrl"
+      :preview-text="post.previewText"
+      :title="post.title"
       :is-admin="isAdmin"
     />
   </div>
@@ -19,6 +15,7 @@
 <script lang="ts">
   import {Vue, Component, Prop} from "nuxt-property-decorator";
   import PostPreview from "~/components/Posts/PostPreview.vue";
+  import {IPost} from "~/interfaces";
 
 
   @Component({
@@ -28,5 +25,6 @@
   })
   export default class PostList extends Vue {
     @Prop({default: false}) isAdmin!: boolean;
+    @Prop({required:true})posts!:Array<IPost>;
   }
 </script>

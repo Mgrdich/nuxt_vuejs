@@ -3,13 +3,15 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList/>
+    <PostList :posts="posts"/>
   </div>
 </template>
 
 <script lang="ts">
   import {Vue, Component} from 'nuxt-property-decorator';
   import PostList from "~/components/Posts/PostList.vue";
+  import {IPost} from "~/interfaces";
+  import {POSTS_TEST} from "~/functions/util";
 
   @Component({
     components:{
@@ -17,8 +19,7 @@
     }
   })
   export default class Index extends Vue{
-
-
+    private posts:Array<IPost> = POSTS_TEST;
   }
 </script>
 
