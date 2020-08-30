@@ -11,3 +11,8 @@ export interface IPost {
   title:string;
   author:string;
 }
+
+export interface IAuth {
+  email:string;
+  password:string;
+}
