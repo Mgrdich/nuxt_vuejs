@@ -20,6 +20,3 @@
     private displaySideNav: boolean = false;
   }
 </script>
-
-<style>
-</style>

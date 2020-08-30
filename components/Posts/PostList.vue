@@ -30,7 +30,3 @@
     @Prop({default: false}) isAdmin!: boolean;
   }
 </script>
-
-<style lang="">
-
-</style>
