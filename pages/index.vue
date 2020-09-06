@@ -12,6 +12,7 @@
   import PostList from "~/components/Posts/PostList.vue";
   import {IPost} from "~/interfaces";
   import {POSTS_TEST} from "~/functions/util";
+  import {Context} from "@nuxt/types";
 
   @Component({
     components:{
@@ -19,7 +20,16 @@
     }
   })
   export default class Index extends Vue{
-    private posts:Array<IPost> = POSTS_TEST;
+    private posts:Array<IPost> = [];
+
+    asyncData (context:Context,callback:Function) { //wait for async data to be fetched on the Server
+      setTimeout( () => {
+        callback(null,{
+            posts:POSTS_TEST
+          }
+        );
+      },1500);
+    }
   }
 </script>
 
@@ -44,7 +54,7 @@
     background-color: rgb(211, 211, 211);
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px #000000;
     box-sizing: border-box;
     border: 1px solid black;
   }
