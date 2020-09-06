@@ -12,7 +12,6 @@
   import PostList from "~/components/Posts/PostList.vue";
   import {IPost} from "~/interfaces";
   import {POSTS_TEST} from "~/functions/util";
-  import {Context} from "@nuxt/types";
 
   @Component({
     components: {
