@@ -23,7 +23,7 @@
     private posts:Array<IPost> = [];
 
     asyncData (context:Context,callback:Function) { //wait for async data to be fetched on the Server
-      setTimeout( () => {
+      setTimeout( () => { //simulating a server
         callback(null,{
             posts:POSTS_TEST
           }

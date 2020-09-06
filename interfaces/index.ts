@@ -12,6 +12,10 @@ export interface IPost {
   author:string;
 }
 
+export interface IPostExtended extends IPost{
+  updatedDate:Date
+}
+
 export interface IAuth {
   email:string;
   password:string;
