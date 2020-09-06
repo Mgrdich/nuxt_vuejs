@@ -15,20 +15,25 @@
   import {Context} from "@nuxt/types";
 
   @Component({
-    components:{
+    components: {
       PostList
     }
   })
-  export default class Index extends Vue{
-    private posts:Array<IPost> = [];
+  export default class Index extends Vue {
+    private posts: Array<IPost> = [];
 
-    asyncData (context:Context,callback:Function) { //wait for async data to be fetched on the Server
-      setTimeout( () => { //simulating a server
-        callback(null,{
-            posts:POSTS_TEST
-          }
-        );
-      },1500);
+    asyncData() { //wait for async data to be fetched on the Server
+      return new Promise((resolve, rejected) => {
+        setTimeout(() => { //simulating a server
+          resolve({
+            posts: POSTS_TEST
+          })
+        });
+      }).then(function (res) {
+        return res
+      }).catch(function (err) {
+        console.error(err);
+      })
     }
   }
 </script>

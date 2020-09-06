@@ -17,7 +17,6 @@
 
 <script lang="ts">
   import {Vue, Component} from "nuxt-property-decorator";
-  import {Context} from "@nuxt/types";
   import {IPostExtended} from "~/interfaces";
   import {POSTS_TEST} from "~/functions/util";
 
@@ -25,15 +24,22 @@
   export default class PostsId extends Vue {
     private post: IPostExtended | {} = {};
 
-    asyncData(context: Context, callback: Function) {
-      setTimeout(() => { //simulating a server
-        callback(null, {
-          post: {
-            ...POSTS_TEST[0],
-            updatedDate:new Date()
-          }
-        })
-      }, 1500);
+    asyncData() {
+      return new Promise((resolve,reject)=>{
+        setTimeout(() => { //simulating a server
+          resolve({
+              post: {
+                ...POSTS_TEST[0],
+                updatedDate: new Date()
+              }
+            }
+          );
+        }, 1500);
+      }).then((res)=>{
+        return res
+      }).catch((e)=>{
+        console.error(e);
+      })
     }
   }
 </script>
