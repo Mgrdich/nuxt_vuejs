@@ -4,6 +4,7 @@ import {
   VuexMutation,
   VuexAction,
 } from 'nuxt-property-decorator'
+import {IPost} from "~/interfaces";
 
 
 @Module({
@@ -11,16 +12,17 @@ import {
   namespaced: true,
   stateFactory: true,
 })
-export default class First extends VuexModule {
-  text = 'before update'
+export default class Main extends VuexModule {
+  loadedPosts:Array<IPost> = [];
 
   @VuexMutation
-  setText(val:string) {
-    this.text = val
+  setPosts(val:Array<IPost>) {
+    this.loadedPosts = val
   }
 
   @VuexAction({ rawError: true })
-  setTextSecond(val:string) {
-    
+  setTextSecond() {
+
   }
+
 }
