@@ -13,15 +13,19 @@ import {IPost} from "~/interfaces";
   stateFactory: true,
 })
 export default class Main extends VuexModule {
-  loadedPosts:Array<IPost> = [];
+  myloadedPosts:Array<IPost> = [];
 
-  @VuexMutation
-  setPosts(val:Array<IPost>) {
-    this.loadedPosts = val
+  get loadedPosts():Array<IPost>{
+    return this.myloadedPosts;
   }
 
-  @VuexAction({ rawError: true })
-  setTextSecond() {
+  @VuexMutation
+  setPosts(val:Array<IPost>):void {
+    this.myloadedPosts = val
+  }
+
+  @VuexAction({ rawError: true,commit:'setPosts'})
+  setActionPosts():void{
 
   }
 
