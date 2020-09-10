@@ -2,7 +2,7 @@ import {
   Module,
   VuexModule,
   VuexMutation,
-  VuexAction,
+  VuexAction
 } from 'nuxt-property-decorator'
 import {IPost} from "~/interfaces";
 
@@ -13,20 +13,20 @@ import {IPost} from "~/interfaces";
   stateFactory: true,
 })
 export default class Main extends VuexModule {
-  myloadedPosts:Array<IPost> = [];
+  myLoadedPosts:Array<IPost> = [];
 
   get loadedPosts():Array<IPost>{
-    return this.myloadedPosts;
+    return this.myLoadedPosts;
   }
 
   @VuexMutation
   setPosts(val:Array<IPost>):void {
-    this.myloadedPosts = val
+    this.myLoadedPosts = val
   }
 
   @VuexAction({ rawError: true,commit:'setPosts'})
   setActionPosts():void{
-
+    console.log('sssssss');
   }
 
 }

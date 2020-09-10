@@ -21,7 +21,7 @@
   export default class Index extends Vue {
     private posts: Array<IPost> = [];
 
-    asyncData():Promise<any> { //wait for async data to be fetched on the Server
+    public asyncData():Promise<any> { //wait for async data to be fetched on the Server
       return new Promise((resolve, rejected) => {
         setTimeout(() => { //simulating a server
           resolve({
@@ -35,7 +35,7 @@
       })
     }
 
-    created():void {
+    public created():void {
       console.log("sss");
       this.$store.dispatch('main/setActionPosts');
     }

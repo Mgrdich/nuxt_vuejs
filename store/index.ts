@@ -1,8 +1,10 @@
 import Vuex from 'vuex';
-import Main from "~/store/mian";
+import Main from "~/store/modules";
 
-export const store = new Vuex.Store({
-  modules: {
-    main:Main
-  }
-});
+export function createStore() {
+  return new Vuex.Store({
+    modules: {
+      main:Main,
+    }
+  });
+}
