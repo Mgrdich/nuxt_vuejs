@@ -2,7 +2,7 @@ import {
   Module,
   VuexModule,
   VuexMutation,
-  VuexAction
+  VuexAction,
 } from 'nuxt-property-decorator'
 import {IPost} from "~/interfaces";
 
@@ -24,7 +24,7 @@ export default class Main extends VuexModule {
     this.myLoadedPosts = val
   }
 
-  @VuexAction({ rawError: true,commit:'setPosts'})
+  @VuexAction({commit:'setPosts'})
   setActionPosts():void{
     console.log('sssssss');
   }

@@ -12,6 +12,7 @@
   import PostList from "~/components/Posts/PostList.vue";
   import {IPost} from "~/interfaces";
   import {POSTS_TEST} from "~/functions/util";
+  import {MainStore} from "~/store";
 
   @Component({
     components: {
@@ -36,8 +37,8 @@
     }
 
     public created():void {
-      console.log("sss");
-      this.$store.dispatch('main/setActionPosts');
+      console.log(MainStore);
+      MainStore.setActionPosts();
     }
   }
 </script>
