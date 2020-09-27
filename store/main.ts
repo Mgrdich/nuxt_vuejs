@@ -21,13 +21,12 @@ export default class Main extends VuexModule {
 
   @VuexMutation
   setPosts(val:Array<any>):void {
-    console.log("loadPosts");
     this.myLoadedPosts = val
   }
 
-  @VuexAction({rawError:true,root:false})
-  setActionPosts(arr:Array<any>):void{
-    this.setPosts(arr);
+  @VuexAction({rawError:true,root:false,commit:'setPosts'})
+  setActionPosts(arr:Array<any>):Array<any>{
+    return arr;
   }
 
 }
