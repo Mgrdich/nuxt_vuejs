@@ -20,12 +20,12 @@ export default class Main extends VuexModule {
   }
 
   @VuexMutation
-  setPosts(val:Array<any>):void {
+  setPosts(val:Array<IPost>):void {
     this.myLoadedPosts = val
   }
 
   @VuexAction({rawError:true,root:false,commit:'setPosts'})
-  setActionPosts(arr:Array<any>):Array<any>{
+  setActionPosts(arr:Array<IPost>):Array<IPost>{
     return arr;
   }
 

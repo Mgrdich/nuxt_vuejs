@@ -37,8 +37,7 @@
     }
 
     public created():void {
-      console.log(MainStore);
-      MainStore.setActionPosts(['ss','sss']);
+      MainStore.setActionPosts(POSTS_TEST);
     }
   }
 </script>
