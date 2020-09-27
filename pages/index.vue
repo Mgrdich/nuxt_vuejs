@@ -13,6 +13,7 @@
   import {IPost} from "~/interfaces";
   import {POSTS_TEST} from "~/functions/util";
   import {MainStore} from "~/store";
+  import {Context} from "@nuxt/types";
 
   @Component({
     components: {
@@ -20,25 +21,28 @@
     }
   })
   export default class Index extends Vue {
-    private posts: Array<IPost> = [];
 
-    public asyncData():Promise<any> { //wait for async data to be fetched on the Server
+    get posts():Array<IPost> {
+      return MainStore.loadedPosts.length?MainStore.loadedPosts:[];
+    }
+
+    public fetch(context:Context):Promise<any> { //wait for async data to be fetched on the Server
+      if(MainStore.loadedPosts.length > 0) {
+        return null;
+      }
       return new Promise((resolve, rejected) => {
         setTimeout(() => { //simulating a server
           resolve({
             posts: POSTS_TEST
           })
         });
-      }).then(function (res) {
-        return res
+      }).then(function (res: {posts: Array<IPost>}) {
+        return MainStore.setActionPosts(res.posts);
       }).catch(function (err:Error) {
         console.error(err);
       })
     }
 
-    public created():void {
-      MainStore.setActionPosts(POSTS_TEST);
-    }
   }
 </script>
 
