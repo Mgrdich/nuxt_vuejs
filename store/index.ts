@@ -2,10 +2,10 @@ import Vuex from 'vuex';
 import Main from "~/store/main";
 
 import { Store } from 'vuex'
-import { initialiseStores} from "~/util";
+import { initialiseStores} from "~/util/store-accessor";
 const initializer = (store: Store<any>) => initialiseStores(store)
 export const plugins = [initializer]
-export * from '~/util';
+export * from '~/util/store-accessor';
 
 
 export function createStore() {
