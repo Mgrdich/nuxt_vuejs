@@ -32,20 +32,4 @@ export default class Main extends VuexModule {
     return arr;
   }
 
-  @VuexAction({rawError:true})
-  nuxtServerInit(vuexContext:Context,context:Context){
-    return new Promise((resolve, rejected) => {
-      setTimeout(() => { //simulating a server
-        resolve({
-          posts: POSTS_TEST
-        })
-      });
-    }).then(function (res: any) {
-      return MainStore.setActionPosts(res.posts);
-    }).catch(function (err:Error) {
-      console.error(err);
-    })
-
-  }
-
 }
