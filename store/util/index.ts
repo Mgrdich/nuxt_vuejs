@@ -1,6 +1,6 @@
 import { Store } from 'vuex'
 import { getModule } from 'vuex-module-decorators'
-import Main from "~/store/modules/main";
+import Main from "~/store/main";
 
 let MainStore: any;
 

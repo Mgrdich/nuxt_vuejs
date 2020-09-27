@@ -1,5 +1,5 @@
 import Vuex from 'vuex';
-import Main from "~/store/modules/main";
+import Main from "~/store/main";
 
 import { Store } from 'vuex'
 import { initialiseStores} from "~/store/util";
