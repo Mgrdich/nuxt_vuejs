@@ -5,9 +5,6 @@ import {
   VuexAction,
 } from 'nuxt-property-decorator'
 import {IPost} from "~/interfaces";
-import {Context} from "@nuxt/types";
-import {POSTS_TEST} from "~/functions/util";
-import {MainStore} from "~/util/store-accessor";
 
 
 @Module({
