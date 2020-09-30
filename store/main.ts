@@ -27,7 +27,7 @@ export default class Main extends VuexModule {
     this.myLoadedPosts = val
   }
 
-  @VuexAction({rawError:true,root:false,commit:'setPosts'})
+  @VuexAction({rawError:true,commit:'setPosts'})
   setActionPosts(arr:Array<IPost>):Array<IPost>{
     return arr;
   }
