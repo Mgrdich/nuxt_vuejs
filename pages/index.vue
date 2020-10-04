@@ -25,24 +25,6 @@ export default class Index extends Vue {
   get posts(): Array<IPost> {
     return MainStore.loadedPosts.length ? MainStore.loadedPosts : [];
   }
-
-  public fetch(context: Context): Promise<any> | null { //wait for async data to be fetched on the Server
-    if (MainStore.loadedPosts.length > 0) {
-      return null;
-    }
-    return new Promise((resolve, rejected) => {
-      setTimeout(() => { //simulating a server
-        resolve({
-          posts: POSTS_TEST
-        })
-      });
-    }).then(function (res: any) {
-      return MainStore.setActionPosts(res.posts);
-    }).catch(function (err: Error) {
-      console.error(err);
-    })
-  }
-
 }
 </script>
 
