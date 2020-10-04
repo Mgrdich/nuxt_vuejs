@@ -28,5 +28,4 @@ export default class Main extends VuexModule {
   setActionPosts(arr:Array<IPost>):Array<IPost>{
     return arr;
   }
-
 }

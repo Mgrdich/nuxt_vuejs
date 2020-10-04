@@ -41,7 +41,6 @@ export default class Index extends Vue {
     }).catch(function (err: Error) {
       console.error(err);
     })
-
   }
 
 }
