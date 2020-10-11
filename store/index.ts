@@ -24,7 +24,7 @@ export const actions: ActionTree<RootState, RootState> = {
     }).then(function (res: any) {
       return MainStore.setActionPosts(res.posts);
     }).catch(function (err: Error) {
-      console.error(err);
+      // console.error(err);
     })
 
   }
